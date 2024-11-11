@@ -1,0 +1,249 @@
+/* body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 300px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#recommendations {
+    margin-top: 20px;
+    font-size: 1.1em;
+} */
+
+
+
+
+
+/* 
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    width: 350px;
+    animation: fadeIn 1.5s ease;
+}
+
+.container h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: #2e2e3e;
+    color: #fff;
+    outline: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px #007bff;
+}
+
+button {
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #007bff, #4b59f7);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0056b3, #3a46c4);
+    transform: translateY(-2px);
+}
+
+#recommendations {
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #d4d4dc;
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+} */
+
+
+
+
+
+
+
+
+
+/* Body and Background Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    width: 350px;
+    z-index: 10;
+    animation: fadeIn 1.5s ease;
+}
+
+.container h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: #2e2e3e;
+    color: #fff;
+    outline: none;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px #007bff;
+}
+
+button {
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #007bff, #4b59f7);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0056b3, #3a46c4);
+    transform: translateY(-2px);
+}
+
+#recommendations {
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: #d4d4dc;
+    line-height: 1.5;
+}
+
+/* Background Animation */
+.stars, .twinkling, .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stars {
+    background: url('https://www.transparenttextures.com/patterns/dark-matter.png') repeat;
+    opacity: 0.8;
+    animation: moveStars 100s linear infinite;
+}
+
+.twinkling {
+    background: url('https://www.transparenttextures.com/patterns/starry-night.png') repeat;
+    opacity: 0.5;
+    animation: moveTwinkling 200s linear infinite;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveStars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-1000px); }
+}
+
+@keyframes moveTwinkling {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-1000px); }
+}
