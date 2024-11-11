@@ -1,0 +1,214 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #recommendations { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <input type="text" id="movieName" placeholder="Enter a movie name">
+    <button onclick="getRecommendations()">Get Recommendations</button>
+    
+    <div id="recommendations"></div>
+
+    <script>
+        async function getRecommendations() {
+            // Get the movie name from the input field
+            const movieName = document.getElementById('movieName').value;
+
+            // Make an AJAX POST request to the Flask server
+            const response = await fetch("/recommend", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ movie_name: movieName })
+            });
+
+            // Parse the JSON response and display recommendations
+            const data = await response.json();
+            const recommendationsDiv = document.getElementById("recommendations");
+
+            if (data.error) {
+                // Display error if there's an issue
+                recommendationsDiv.innerHTML = "Error: " + data.error;
+            } else {
+                // Display each recommendation as a list
+                recommendationsDiv.innerHTML = "Recommended Movies:<br>";
+                data.forEach(movie => {
+                    recommendationsDiv.innerHTML += movie + "<br>";
+                });
+            }
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <input type="text" id="movie-input" placeholder="Enter a movie title" />
+        <button id="recommend-button">Get Recommendations</button>
+        <div id="recommendations"></div>
+    </div>
+
+    <script>
+        document.getElementById("recommend-button").addEventListener("click", async () => {
+            const movieTitle = document.getElementById("movie-input").value;
+            
+            if (!movieTitle) {
+                alert("Please enter a movie title.");
+                return;
+            }
+            
+            try {
+                const response = await fetch("/recommend", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ "movie_title": movieTitle })
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById("recommendations").innerHTML = data.recommendations.join("<br>");
+                } else {
+                    document.getElementById("recommendations").innerHTML = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        });
+    </script>
+</body>
+</html>
+ -->
+
+
+
+
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <input type="text" id="movie-input" placeholder="Enter a movie title" />
+        <button id="recommend-button">Get Recommendations</button>
+        <div id="recommendations"></div>
+    </div>
+
+    <script>
+        document.getElementById("recommend-button").addEventListener("click", async () => {
+            const movieTitle = document.getElementById("movie-input").value;
+            
+            if (!movieTitle) {
+                alert("Please enter a movie title.");
+                return;
+            }
+            
+            try {
+                const response = await fetch("/recommend", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ "movie_title": movieTitle })
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById("recommendations").innerHTML = data.recommendations.join("<br>");
+                } else {
+                    document.getElementById("recommendations").innerHTML = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("recommendations").innerHTML = "An error occurred. Please try again.";
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Starry background layers -->
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <input type="text" id="movie-input" placeholder="Enter a movie title" />
+        <button id="recommend-button">Get Recommendations</button>
+        <div id="recommendations"></div>
+    </div>
+
+    <script>
+        document.getElementById("recommend-button").addEventListener("click", async () => {
+            const movieTitle = document.getElementById("movie-input").value;
+            
+            if (!movieTitle) {
+                alert("Please enter a movie title.");
+                return;
+            }
+            
+            try {
+                const response = await fetch("/recommend", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ "movie_title": movieTitle })
+                });
+                
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById("recommendations").innerHTML = data.recommendations.join("<br>");
+                } else {
+                    document.getElementById("recommendations").innerHTML = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById("recommendations").innerHTML = "An error occurred. Please try again.";
+            }
+        });
+    </script>
+</body>
+</html>
