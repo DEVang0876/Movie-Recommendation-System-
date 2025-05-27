@@ -41,13 +41,22 @@ class MovieRecommender:
 # Initialize Flask app
 app = Flask(__name__)
 
-# Load the model using dill
+# Load the model using dill and ensure movies/ratings data is loaded
 try:
     with open('model.pkl', 'rb') as file:
         model = dill.load(file)
+    # Load movies and ratings data
+    movies_df = pd.read_csv('movies.csv')
+    ratings_df = pd.read_csv('ratings.csv')
+    # If the model is not already initialized with data, re-initialize
+    if not hasattr(model, 'movies') or not hasattr(model, 'ratings'):
+        model = MovieRecommender(movies_df, ratings_df)
 except FileNotFoundError:
     model = None
     print("Error: model.pkl not found. Ensure the file exists and is in the correct directory.")
+except Exception as e:
+    model = None
+    print(f"Error loading model or data: {e}")
 
 @app.route('/')
 def home():
